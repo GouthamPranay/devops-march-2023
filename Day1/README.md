@@ -666,6 +666,12 @@ f10088920a4d   docker.bintray.io/jfrog/artifactory-oss:latest   "/entrypoint-art
 http://localhost:8081
 ```
 
+Login Credentials
+<pre>
+Username - admin
+Password - password
+</pre>
+
 Expected output
 ![JFrog Artifactory](artifactory-1.png)
 
