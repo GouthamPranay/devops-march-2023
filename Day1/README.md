@@ -67,3 +67,22 @@ There are 3 co-ordinates just like GPS co-ordinates
 - 80% of the times users only use 20% of the features of any product
 - most trivial things should be possible in Maven with less/no extra configurations
 - advanced scenarios which are required rarely should still be possible by configuring Maven
+
+## Cloning the TekTutor Training Repository
+```
+cd ~
+git clone https://github.com/tektutor/devops-march-2023.git
+```
+  
+## Pulling the delta changes from TekTutor Training Repository
+```
+cd ~/devops-march-2023
+git pull
+```
+## Lab - Compiling your first Maven project
+```
+cd ~/devops-march-2023
+git pull
+cd Day1/Hello
+mvn compile
+```
