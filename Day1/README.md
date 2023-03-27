@@ -255,7 +255,7 @@ Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/q
 [INFO] ------------------------------------------------------------------------
 </pre>
 
-## Lab - Running your first maven project
+## ⛹️‍♂️ Lab - Running your first maven project
 ```
 cd ~/devops-march-2023
 git pull
