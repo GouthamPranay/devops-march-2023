@@ -68,6 +68,18 @@ There are 3 co-ordinates just like GPS co-ordinates
 - most trivial things should be possible in Maven with less/no extra configurations
 - advanced scenarios which are required rarely should still be possible by configuring Maven
 
+## What are Maven Life cycles?
+- Maven life cycle is a complex command that executes many phases in a top to bottom order
+- in other words, it is a sequential execution of many Maven Phases in top to bottom  order
+- Maven supports 3 life cycles
+  1. default ( has 23 Phases )
+  2. clean ( has 3 Phases )
+  3. site ( has 4 Phases )
+- each life cycle supports one to many Phases
+- each Phase can invoke one to many Maven plugins
+- each Maven Plugin supports one to many goals
+- each Plugin goal supports one functionality
+  
 ## Cloning the TekTutor Training Repository ( Do this only first time )
 ```
 cd ~
