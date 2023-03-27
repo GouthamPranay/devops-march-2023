@@ -65,6 +65,5 @@ There are 3 co-ordinates just like GPS co-ordinates
 ## What is Maven Convention over Configuration ?
 - 80-20 Principle
 - 80% of the times users only use 20% of the features of any product
-
-  
-## What is Maven Repository?
+- most trivial things should be possible in Maven with less/no extra configurations
+- advanced scenarios which are required rarely should still be possible by configuring Maven
