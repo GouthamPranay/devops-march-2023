@@ -660,3 +660,9 @@ jegan@tektutor.org $ <b>docker ps</b>
 CONTAINER ID   IMAGE                                            COMMAND                  CREATED          STATUS          PORTS                                                           NAMES
 f10088920a4d   docker.bintray.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   20 seconds ago   Up 18 seconds   0.0.0.0:8081-8082->8081-8082/tcp, :::8081-8082->8081-8082/tcp   artifactory
 </pre>
+
+#### Accessing the JFrog Artifactory webpage
+```
+http://localhost:8081
+```
+
