@@ -510,3 +510,123 @@ generated-sources  hello-world-1.0.0.jar   maven-status    test-classes
 jegan@tektutor.org $ <b>java -cp hello-world-1.0.0.jar org.tektutor.Hello</b>
 Hello Maven!
 </pre>
+
+## Lab - Listing the Maven default life cycle phases
+```
+cd ~/devops-march-2023
+git pull
+cd Day1/Hello
+mvn help:describe -Dcmd=compile
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $ <b>mvn help:describe -Dcmd=compile</b>
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.tektutor:hello-world >----------------------
+[INFO] Building hello-world 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- help:3.4.0:describe (default-cli) @ hello-world ---
+[INFO] 'compile' is a phase corresponding to this plugin:
+org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile
+
+It is a part of the lifecycle for the POM packaging 'jar'. This lifecycle includes the following phases:
+* validate: Not defined
+* initialize: Not defined
+* generate-sources: Not defined
+* process-sources: Not defined
+* generate-resources: Not defined
+* process-resources: org.apache.maven.plugins:maven-resources-plugin:3.3.0:resources
+* compile: org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile
+* process-classes: Not defined
+* generate-test-sources: Not defined
+* process-test-sources: Not defined
+* generate-test-resources: Not defined
+* process-test-resources: org.apache.maven.plugins:maven-resources-plugin:3.3.0:testResources
+* test-compile: org.apache.maven.plugins:maven-compiler-plugin:3.10.1:testCompile
+* process-test-classes: Not defined
+* test: org.apache.maven.plugins:maven-surefire-plugin:3.0.0:test
+* prepare-package: Not defined
+* package: org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar
+* pre-integration-test: Not defined
+* integration-test: Not defined
+* post-integration-test: Not defined
+* verify: Not defined
+* install: org.apache.maven.plugins:maven-install-plugin:3.1.0:install
+* deploy: org.apache.maven.plugins:maven-deploy-plugin:3.1.0:deploy
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.455 s
+[INFO] Finished at: 2023-03-27T15:43:01+05:30
+[INFO] ------------------------------------------------------------------------
+</pre>
+
+## Lab - Listing the Maven clean life cycle phases
+```
+cd ~/devops-march-2023
+git pull
+cd Day1/Hello
+mvn help:describe -Dcmd=clean
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $ <b>mvn help:describe -Dcmd=clean</b>
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.tektutor:hello-world >----------------------
+[INFO] Building hello-world 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- help:3.4.0:describe (default-cli) @ hello-world ---
+[INFO] 'clean' is a phase within the 'clean' lifecycle, which has the following phases: 
+* pre-clean: Not defined
+* clean: org.apache.maven.plugins:maven-clean-plugin:3.2.0:clean
+* post-clean: Not defined
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.435 s
+[INFO] Finished at: 2023-03-27T15:45:11+05:30
+[INFO] ------------------------------------------------------------------------
+</pre>
+
+## Lab - Listing the Maven site life cycle phases
+```
+cd ~/devops-march-2023
+git pull
+cd Day1/Hello
+mvn help:describe -Dcmd=site
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $ <b>mvn help:describe -Dcmd=site</b>
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.tektutor:hello-world >----------------------
+[INFO] Building hello-world 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- help:3.4.0:describe (default-cli) @ hello-world ---
+[INFO] 'site' is a phase within the 'site' lifecycle, which has the following phases: 
+* pre-site: Not defined
+* site: org.apache.maven.plugins:maven-site-plugin:3.12.1:site
+* post-site: Not defined
+* site-deploy: org.apache.maven.plugins:maven-site-plugin:3.12.1:deploy
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.420 s
+[INFO] Finished at: 2023-03-27T15:45:43+05:30
+[INFO] ------------------------------------------------------------------------
+</pre>
