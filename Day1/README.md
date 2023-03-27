@@ -333,3 +333,58 @@ jegan@tektutor.org $ <b>mvn clean</b>
 jegan@tektutor.org $ <b>ls</b>
 pom.xml  src
 </pre>
+
+## Lab - Executing automated test cases as part of Maven build
+```
+cd ~/devops-march-2023
+git pull
+cd Day1/Hello
+mvn test
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $<b> mvn test</b>    
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.tektutor:hello-world >----------------------
+[INFO] Building hello-world 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ hello-world ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/jegan/devops-march-2023/Day1/Hello/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ hello-world ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ hello-world ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/jegan/devops-march-2023/Day1/Hello/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ hello-world ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /home/jegan/devops-march-2023/Day1/Hello/target/test-classes
+[INFO] 
+[INFO] --- surefire:3.0.0:test (default-test) @ hello-world ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.tektutor.HelloTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s - in org.tektutor.HelloTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.352 s
+[INFO] Finished at: 2023-03-27T14:26:13+05:30
+[INFO] ------------------------------------------------------------------------
+</pre>
