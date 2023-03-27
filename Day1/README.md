@@ -254,3 +254,17 @@ Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/q
 [INFO] Finished at: 2023-03-27T12:59:40+05:30
 [INFO] ------------------------------------------------------------------------
 </pre>
+
+## Lab - Running your first maven project
+```
+cd ~/devops-march-2023
+git pull
+cd Day1/Hello
+mvn clean compile
+```
+
+Running the application
+```
+cd target/classes
+java org.tektutor.Hello
+```
