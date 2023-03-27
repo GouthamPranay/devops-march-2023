@@ -666,3 +666,5 @@ f10088920a4d   docker.bintray.io/jfrog/artifactory-oss:latest   "/entrypoint-art
 http://localhost:8081
 ```
 
+Expected output
+![JFrog Artifactory](artifactory-1.png)
