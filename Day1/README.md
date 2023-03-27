@@ -79,7 +79,7 @@ git clone https://github.com/tektutor/devops-march-2023.git
 cd ~/devops-march-2023
 git pull
 ```
-## Lab - Compiling your first Maven project
+## ⛹️‍♂️ Lab - Compiling your first Maven project
 ```
 cd ~/devops-march-2023
 git pull
@@ -252,5 +252,139 @@ Downloaded from central: https://repo.maven.apache.org/maven2/com/thoughtworks/q
 [INFO] ------------------------------------------------------------------------
 [INFO] Total time:  5.318 s
 [INFO] Finished at: 2023-03-27T12:59:40+05:30
+[INFO] ------------------------------------------------------------------------
+</pre>
+
+## ⛹️‍♂️ Lab - Running your first maven project
+```
+cd ~/devops-march-2023
+git pull
+cd Day1/Hello
+mvn clean compile
+```
+
+Running the application
+```
+cd target/classes
+java org.tektutor.Hello
+```
+
+Expected output
+
+<pre>
+jegan@tektutor.org  ~/devops-march-2023   main  cd Day1/Hello 
+jegan@tektutor.org  ~/devops-march-2023/Day1/Hello   main  ls
+pom.xml  src
+jegan@tektutor.org  ~/devops-march-2023/Day1/Hello   main  mvn compile
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.tektutor:hello-world >----------------------
+[INFO] Building hello-world 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ hello-world ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/jegan/devops-march-2023/Day1/Hello/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ hello-world ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /home/jegan/devops-march-2023/Day1/Hello/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.717 s
+[INFO] Finished at: 2023-03-27T13:27:19+05:30
+[INFO] ------------------------------------------------------------------------
+
+jegan@tektutor.org $ <b>ls</b>
+pom.xml  src  target
+jegan@tektutor.org $ <b>cd target/classes</b>
+jegan@tektutor.org $ <b>tree</b>
+.
+└── org
+    └── tektutor
+        └── Hello.class
+
+2 directories, 1 file
+
+jegan@tektutor.org $ <b>java org.tektutor.Hello</b>
+Hello Maven!
+
+jegan@tektutor.org $ <b>cd ../..</b>
+
+jegan@tektutor.org $ <b>mvn clean</b>
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.tektutor:hello-world >----------------------
+[INFO] Building hello-world 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ hello-world ---
+[INFO] Deleting /home/jegan/devops-march-2023/Day1/Hello/target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.204 s
+[INFO] Finished at: 2023-03-27T13:27:47+05:30
+[INFO] ------------------------------------------------------------------------
+jegan@tektutor.org $ <b>ls</b>
+pom.xml  src
+</pre>
+
+## ⛹️‍♂️ Lab - Executing automated test cases as part of Maven build
+```
+cd ~/devops-march-2023
+git pull
+cd Day1/Hello
+mvn test
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $<b> mvn test</b>    
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.tektutor:hello-world >----------------------
+[INFO] Building hello-world 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ hello-world ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/jegan/devops-march-2023/Day1/Hello/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ hello-world ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.0:testResources (default-testResources) @ hello-world ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/jegan/devops-march-2023/Day1/Hello/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:testCompile (default-testCompile) @ hello-world ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /home/jegan/devops-march-2023/Day1/Hello/target/test-classes
+[INFO] 
+[INFO] --- surefire:3.0.0:test (default-test) @ hello-world ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junit4.JUnit4Provider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.tektutor.HelloTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 s - in org.tektutor.HelloTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.352 s
+[INFO] Finished at: 2023-03-27T14:26:13+05:30
 [INFO] ------------------------------------------------------------------------
 </pre>
