@@ -68,7 +68,7 @@ There are 3 co-ordinates just like GPS co-ordinates
 - most trivial things should be possible in Maven with less/no extra configurations
 - advanced scenarios which are required rarely should still be possible by configuring Maven
 
-## Cloning the TekTutor Training Repository
+## Cloning the TekTutor Training Repository ( Do this only first time )
 ```
 cd ~
 git clone https://github.com/tektutor/devops-march-2023.git
