@@ -79,7 +79,7 @@ git clone https://github.com/tektutor/devops-march-2023.git
 cd ~/devops-march-2023
 git pull
 ```
-## Lab - Compiling your first Maven project
+## ⛹️‍♂️ Lab - Compiling your first Maven project
 ```
 cd ~/devops-march-2023
 git pull
@@ -334,7 +334,7 @@ jegan@tektutor.org $ <b>ls</b>
 pom.xml  src
 </pre>
 
-## Lab - Executing automated test cases as part of Maven build
+## ⛹️‍♂️ Lab - Executing automated test cases as part of Maven build
 ```
 cd ~/devops-march-2023
 git pull
