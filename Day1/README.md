@@ -668,3 +668,5 @@ http://localhost:8081
 
 Expected output
 ![JFrog Artifactory](artifactory-1.png)
+
+When it prompts to change the password, type 'Admin@123' without quotes.
