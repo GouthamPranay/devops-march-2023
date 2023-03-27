@@ -630,3 +630,33 @@ jegan@tektutor.org $ <b>mvn help:describe -Dcmd=site</b>
 [INFO] Finished at: 2023-03-27T15:45:43+05:30
 [INFO] ------------------------------------------------------------------------
 </pre>
+
+## Lab - Setup JFrog Artifactory as a Docker container
+```
+docker run --name artifactory -d -p 8081-8082:8081-8082 docker.bintray.io/jfrog/artifactory-oss:latest
+docker ps
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $ <b>docker run --name artifactory -d -p 8081-8082:8081-8082 docker.bintray.io/jfrog/artifactory-oss:latest</b>
+Unable to find image 'docker.bintray.io/jfrog/artifactory-oss:latest' locally
+latest: Pulling from jfrog/artifactory-oss
+ae9e8620cc67: Pull complete 
+ce9be3d6ba6c: Pull complete 
+b0e450ecab8e: Pull complete 
+7666669f743e: Pull complete 
+b5d4f433dda5: Pull complete 
+4f4fb700ef54: Pull complete 
+490439a56ad9: Pull complete 
+de00a048d25a: Pull complete 
+f99b00732f93: Pull complete 
+685a13394630: Pull complete 
+Digest: sha256:201428295c897d0f1eba95ecf714b4bc8e23146098fffbc2ffe6c467099fdfc6
+Status: Downloaded newer image for docker.bintray.io/jfrog/artifactory-oss:latest
+f10088920a4dda562b422455588941d43063cd216c7f7bfd835ee36de1bbfa66
+
+jegan@tektutor.org $ <b>docker ps</b>
+CONTAINER ID   IMAGE                                            COMMAND                  CREATED          STATUS          PORTS                                                           NAMES
+f10088920a4d   docker.bintray.io/jfrog/artifactory-oss:latest   "/entrypoint-artifac…"   20 seconds ago   Up 18 seconds   0.0.0.0:8081-8082->8081-8082/tcp, :::8081-8082->8081-8082/tcp   artifactory
+</pre>
