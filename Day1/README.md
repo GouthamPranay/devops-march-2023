@@ -268,3 +268,68 @@ Running the application
 cd target/classes
 java org.tektutor.Hello
 ```
+
+Expected output
+
+<pre>
+jegan@tektutor.org  ~/devops-march-2023   main  cd Day1/Hello 
+jegan@tektutor.org  ~/devops-march-2023/Day1/Hello   main  ls
+pom.xml  src
+jegan@tektutor.org  ~/devops-march-2023/Day1/Hello   main  mvn compile
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.tektutor:hello-world >----------------------
+[INFO] Building hello-world 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.0:resources (default-resources) @ hello-world ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/jegan/devops-march-2023/Day1/Hello/src/main/resources
+[INFO] 
+[INFO] --- compiler:3.10.1:compile (default-compile) @ hello-world ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 1 source file to /home/jegan/devops-march-2023/Day1/Hello/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.717 s
+[INFO] Finished at: 2023-03-27T13:27:19+05:30
+[INFO] ------------------------------------------------------------------------
+
+jegan@tektutor.org $ <b>ls</b>
+pom.xml  src  target
+jegan@tektutor.org $ <b>cd target/classes</b>
+jegan@tektutor.org $ <b>tree</b>
+.
+└── org
+    └── tektutor
+        └── Hello.class
+
+2 directories, 1 file
+
+jegan@tektutor.org $ <b>java org.tektutor.Hello</b>
+Hello Maven!
+
+jegan@tektutor.org $ <b>cd ../..</b>
+
+jegan@tektutor.org $ <b>mvn clean</b>
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.tektutor:hello-world >----------------------
+[INFO] Building hello-world 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ hello-world ---
+[INFO] Deleting /home/jegan/devops-march-2023/Day1/Hello/target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.204 s
+[INFO] Finished at: 2023-03-27T13:27:47+05:30
+[INFO] ------------------------------------------------------------------------
+jegan@tektutor.org $ <b>ls</b>
+pom.xml  src
+</pre>
