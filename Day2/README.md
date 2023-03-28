@@ -150,3 +150,21 @@ Server:
   127.0.0.0/8
  Live Restore Enabled: false
 </pre>
+
+
+## Lab - Listing the docker images in your local docker registry
+```
+docker images
+```
+Expected output
+<pre>
+ jegan@tektutor.org $ docker images
+REPOSITORY                                TAG       IMAGE ID       CREATED         SIZE
+docker.bintray.io/jfrog/artifactory-oss   latest    1b425cceed92   2 days ago      1.51GB
+tektutor/centos-ansible-node              latest    c98813da9ef4   3 weeks ago     457MB
+tektutor/ubuntu-ansible-node              latest    7169bf3260b9   3 weeks ago     228MB
+gcr.io/k8s-minikube/kicbase               v0.0.37   01c0ce65fff7   2 months ago    1.15GB
+centos                                    centos7   eeb6ee3f44bd   18 months ago   204MB
+ubuntu                                    16.04     b6f507652425   19 months ago   135MB
+
+</pre>
