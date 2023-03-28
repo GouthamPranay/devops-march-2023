@@ -677,7 +677,7 @@ Expected output
 
 When it prompts to change the password, type 'Admin@123' without quotes.
 
-## Deploying application artifacts to Jfrog Artifactory
+## ⛹️‍♀️ Lab - Deploying application artifacts to Jfrog Artifactory
 ```
 cd ~/devops-march-2023
 git pull
