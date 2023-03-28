@@ -303,3 +303,28 @@ jegan@tektutor.org  ~  docker image inspect docker.bintray.io/jfrog/artifa
     }
 ]
 </pre>
+
+## Lab - Download Docker Image from Docker Hub(Remote Registry) to Local Docker Registry
+```
+docker pull busybox:latest
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $ docker pull busybox:latest
+latest: Pulling from library/busybox
+4b35f584bb4f: Pull complete 
+Digest: sha256:b5d6fe0712636ceb7430189de28819e195e8966372edfc2d9409d79402a0dc16
+Status: Downloaded newer image for busybox:latest
+docker.io/library/busybox:latest
+
+jegan@tektutor.org $ docker images
+REPOSITORY                                TAG       IMAGE ID       CREATED         SIZE
+docker.bintray.io/jfrog/artifactory-oss   latest    1b425cceed92   2 days ago      1.51GB
+busybox                                   latest    7cfbbec8963d   11 days ago     4.86MB
+tektutor/centos-ansible-node              latest    c98813da9ef4   3 weeks ago     457MB
+tektutor/ubuntu-ansible-node              latest    7169bf3260b9   3 weeks ago     228MB
+gcr.io/k8s-minikube/kicbase               v0.0.37   01c0ce65fff7   2 months ago    1.15GB
+centos                                    centos7   eeb6ee3f44bd   18 months ago   204MB
+ubuntu                                    16.04     b6f507652425   19 months ago   135MB
+</pre>
