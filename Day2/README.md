@@ -328,3 +328,28 @@ gcr.io/k8s-minikube/kicbase               v0.0.37   01c0ce65fff7   2 months ago 
 centos                                    centos7   eeb6ee3f44bd   18 months ago   204MB
 ubuntu                                    16.04     b6f507652425   19 months ago   135MB
 </pre>
+
+## Creating your first docker container
+```
+docker run -dit --name ubuntu1 --hostname ubuntu1 ubuntu:22.04 /bin/bash
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $ docker run -dit --name ubuntu1 --hostname ubuntu1 ubuntu:22.04 /bin/bash
+Unable to find image 'ubuntu:22.04' locally
+22.04: Pulling from library/ubuntu
+2ab09b027e7f: Pull complete 
+Digest: sha256:67211c14fa74f070d27cc59d69a7fa9aeff8e28ea118ef3babc295a0428a6d21
+Status: Downloaded newer image for ubuntu:22.04
+5d9611eb44157f3ef85f10545b0528a0ee4a695ea428dd347b03e9f86d467bf4
+ jegan@tektutor.org  ~  docker ps
+CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS     NAMES
+5d9611eb4415   ubuntu:22.04   "/bin/bash"   4 seconds ago   Up 4 seconds             ubuntu1
+
+jegan@tektutor.org $ docker exec -it ubuntu1 bash
+root@ubuntu1:/# ifconfig
+bash: ifconfig: command not found
+root@ubuntu1:/# exit         
+exit
+</pre>
