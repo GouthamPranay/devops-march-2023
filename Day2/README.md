@@ -61,9 +61,17 @@
   - start/stop/restart a container
   - kill/delete container
 - these are low-level tools which are normally used by Container Engines
+- depends os kernel to create and manage containers
 - these are not directly used by end-users
 - examples
   - runC
   - LXC
   - containerd
   - CRI-O
+
+## What are Container Orchestration Tools?
+- it is a software that manage containers
+- examples
+  1. Docker SWARM
+  2. Google Kubernetes
+  3. RedHat OpenShift
