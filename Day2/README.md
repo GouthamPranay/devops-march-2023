@@ -75,3 +75,17 @@
   1. Docker SWARM
   2. Google Kubernetes
   3. RedHat OpenShift
+
+
+# Docker commands
+
+## Lab - Finding docker version
+```
+docker version
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $ <b>docker --version</b>
+Docker version 20.10.21, build 20.10.21-0ubuntu1~22.04.2
+</pre>
