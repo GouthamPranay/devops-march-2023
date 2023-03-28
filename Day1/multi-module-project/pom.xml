@@ -25,7 +25,7 @@
 	<distributionManagement>
 		<repository>
 			<id>artifactory</id>
-			<url>http://localhost:8082/ui/native/tektutor</url>
+			<url>http://localhost:8082/artifactory/tektutor</url>
 		</repository>
 	</distributionManagement>
 
