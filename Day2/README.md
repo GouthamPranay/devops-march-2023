@@ -8,9 +8,11 @@
      - used in Workstations/Servers
      - bare-metal Hypervisor
      - doesn't require Host OS, hence can be installed directly on a bare server with no OS
+     - examples - VMWare vCenter/vSphere
   2. Type2
      - used in Laptops/Desktops/Workstations
      - this works on top of an existing OS (Host OS - Windows, Unix, Linux, Mac OS-X)
+     - examples - VMWare Workstation, VMWare Fusion Oracle VirtualBox, Parallels, Microsoft Hyper-V, KVM
 - within Virtual Machines you can install any OS ( Windows, Unix, Linux, Mac OS-X)
 - each Virtual machine represents a fully functional Operating System
 - each OS withint the virtual machines has its own dedicated OS Kernel
