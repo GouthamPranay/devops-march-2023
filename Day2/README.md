@@ -343,7 +343,8 @@ Unable to find image 'ubuntu:22.04' locally
 Digest: sha256:67211c14fa74f070d27cc59d69a7fa9aeff8e28ea118ef3babc295a0428a6d21
 Status: Downloaded newer image for ubuntu:22.04
 5d9611eb44157f3ef85f10545b0528a0ee4a695ea428dd347b03e9f86d467bf4
- jegan@tektutor.org  ~  docker ps
+
+jegan@tektutor.org $ docker ps
 CONTAINER ID   IMAGE          COMMAND       CREATED         STATUS         PORTS     NAMES
 5d9611eb4415   ubuntu:22.04   "/bin/bash"   4 seconds ago   Up 4 seconds             ubuntu1
 
