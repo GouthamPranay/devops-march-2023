@@ -676,3 +676,12 @@ Expected output
 ![JFrog Artifactory](artifactory-1.png)
 
 When it prompts to change the password, type 'Admin@123' without quotes.
+
+## Deploying application artifacts to Jfrog Artifactory
+```
+cd ~/devops-march-2023
+git pull
+
+cd Day1/multi-module-project
+mvn deploy
+```
