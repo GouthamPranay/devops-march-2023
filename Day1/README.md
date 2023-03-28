@@ -698,3 +698,14 @@ git pull
 cd Day1/multi-module-project
 mvn deploy
 ```
+
+## ⛹️‍♀️ Lab - Maven profiles
+```
+cd ~/devops-march-2023
+git pull
+
+cd Day1/profiles/crm
+mvn compile
+mvn test -P test
+mvn package -P package
+```
