@@ -45,3 +45,25 @@
 - containers doesn't have OS Kernel but VMs have their own OS Kernel
 - container doesn't get their own dedicated hardware but VMs get their own dedicated hardware resources
 - both container and VMS have their own Network stack, IP address and File system
+
+## What is a Container Engine?
+- a high-level software that depends on Container runtimes to manage containers
+- provides user-friendly commands to manage container images and containers
+- these are the tools which are used by end-user like us
+- examples
+  - Docker
+  - Podman
+
+## What is a Container Runtime?
+- is the utility that manages containers
+  - creates a container
+  - runs the containers
+  - start/stop/restart a container
+  - kill/delete container
+- these are low-level tools which are normally used by Container Engines
+- these are not directly used by end-users
+- examples
+  - runC
+  - LXC
+  - containerd
+  - CRI-O
