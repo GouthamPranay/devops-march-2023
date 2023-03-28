@@ -166,5 +166,140 @@ tektutor/ubuntu-ansible-node              latest    7169bf3260b9   3 weeks ago  
 gcr.io/k8s-minikube/kicbase               v0.0.37   01c0ce65fff7   2 months ago    1.15GB
 centos                                    centos7   eeb6ee3f44bd   18 months ago   204MB
 ubuntu                                    16.04     b6f507652425   19 months ago   135MB
+</pre>
 
+## Lab - Finding more details about a docker image
+```
+docker image inspect docker.bintray.io/jfrog/artifactory-oss
+```
+
+Expected output
+<pre>
+jegan@tektutor.org  ~  docker image inspect docker.bintray.io/jfrog/artifactory-oss
+[
+    {
+        "Id": "sha256:1b425cceed925e92ecae539ffcab42e4821e709e15c45484178c6458c6f4a250",
+        "RepoTags": [
+            "docker.bintray.io/jfrog/artifactory-oss:latest"
+        ],
+        "RepoDigests": [
+            "docker.bintray.io/jfrog/artifactory-oss@sha256:201428295c897d0f1eba95ecf714b4bc8e23146098fffbc2ffe6c467099fdfc6"
+        ],
+        "Parent": "",
+        "Comment": "buildkit.dockerfile.v0",
+        "Created": "2023-03-26T11:24:16.520015225Z",
+        "Container": "",
+        "ContainerConfig": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": null,
+            "Cmd": null,
+            "Image": "",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": null,
+            "OnBuild": null,
+            "Labels": null
+        },
+        "DockerVersion": "",
+        "Author": "",
+        "Config": {
+            "Hostname": "",
+            "Domainname": "",
+            "User": "artifactory",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "8081/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "JF_ARTIFACTORY_USER=artifactory",
+                "ARTIFACTORY_VERSION=7.55.9",
+                "LIBAIO_VERSION=0.3.113-1",
+                "ARTIFACTORY_BOOTSTRAP=/artifactory_bootstrap",
+                "JF_PRODUCT_HOME=/opt/jfrog/artifactory",
+                "JF_PRODUCT_DATA_INTERNAL=/var/opt/jfrog/artifactory",
+                "RECOMMENDED_MAX_OPEN_FILES=32000",
+                "MIN_MAX_OPEN_FILES=10000",
+                "RECOMMENDED_MAX_OPEN_PROCESSES=1024",
+                "TARGETARCH=amd64"
+            ],
+            "Cmd": null,
+            "Image": "",
+            "Volumes": {
+                "/var/opt/jfrog/artifactory": {}
+            },
+            "WorkingDir": "/opt/jfrog/artifactory",
+            "Entrypoint": [
+                "/entrypoint-artifactory.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "architecture": "x86_64",
+                "build-date": "2023-01-17T14:19:54",
+                "com.redhat.component": "ubi9-micro-container",
+                "com.redhat.license_terms": "https://www.redhat.com/en/about/red-hat-end-user-license-agreements#UBI",
+                "description": "Very small image which doesn't install the package manager.",
+                "distribution-scope": "public",
+                "io.buildah.version": "1.27.1",
+                "io.k8s.description": "Very small image which doesn't install the package manager.",
+                "io.k8s.display-name": "Ubi9-micro",
+                "io.openshift.expose-services": "",
+                "maintainer": "devops@jfrog.com",
+                "name": "ubi9/ubi-micro",
+                "release": "13",
+                "summary": "ubi9 micro image",
+                "url": "https://access.redhat.com/containers/#/registry.access.redhat.com/ubi9/ubi-micro/images/9.1.0-13",
+                "vcs-ref": "c563e091e0c7bd5a69b2a46990dda4f59595aa37",
+                "vcs-type": "git",
+                "vendor": "Red Hat, Inc.",
+                "version": "9.1.0"
+            }
+        },
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1507787129,
+        "VirtualSize": 1507787129,
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/9dfd0a0b28ffd778630bd911d043035aa4f302b757c9648058dc7482c872e787/diff:/var/lib/docker/overlay2/1f2153fdec8eb662c3aee56c90d2cefeeaa95f9039dfba8a7399fb125a6f7dd7/diff:/var/lib/docker/overlay2/a081c2e7d184549b6240adc748c5c99050c488877b7128a4ca1e042f372d031d/diff:/var/lib/docker/overlay2/229de58cb3ea810a32fd568ccf42e6df49886d809000d8144dbd9fe21e56ccb6/diff:/var/lib/docker/overlay2/4a36ae2cd119a780600866d3fc231b591800b650fc6f0067112a477a51a5c248/diff:/var/lib/docker/overlay2/50e2f707e8a2f12c6d6ebb533df1e32db2d66d4a6c54108a0976e6874a4649ac/diff:/var/lib/docker/overlay2/99e1a55511e88f8a1c824285d2168ab1f6dc23ff9b8cd43667c4bb04f07de12c/diff:/var/lib/docker/overlay2/71e6578db6cf21268a72abb4ea22d4cfd11c41ce59e9a49e496e0f326e527802/diff:/var/lib/docker/overlay2/2293dbf1ce30d83f7daac478b13f05834ba243f5caaadde127dc033c9897ae7c/diff:/var/lib/docker/overlay2/a6729d187d8974709a29996357c9ab3a57a5188d1f507adf615fe39f93fbb38e/diff",
+                "MergedDir": "/var/lib/docker/overlay2/1c52790fbe5d97edb3fb7ea6d2c3b89f134adb30c5d3e560d9b7d875adf030bb/merged",
+                "UpperDir": "/var/lib/docker/overlay2/1c52790fbe5d97edb3fb7ea6d2c3b89f134adb30c5d3e560d9b7d875adf030bb/diff",
+                "WorkDir": "/var/lib/docker/overlay2/1c52790fbe5d97edb3fb7ea6d2c3b89f134adb30c5d3e560d9b7d875adf030bb/work"
+            },
+            "Name": "overlay2"
+        },
+        "RootFS": {
+            "Type": "layers",
+            "Layers": [
+                "sha256:a4c04ef9f22efacfeef90de7240e03c302e7a18b0ed902f8a3e845ff96147e51",
+                "sha256:2c9fd352aa6c1336912749e6b613a321492a94b8ff66a80cae0990ee5d509ac2",
+                "sha256:9c228b073eb781d01e452055d825ee2f72228d8a9f4bcbcdcd85c2a019acad1b",
+                "sha256:efc217f7a7c85944d6b34ef9204925bab9ef355a185022be5010fa06058eb38b",
+                "sha256:5073167ff8bf1bb156813f78adbfae78d848ef7147b85f5d80faa65a94b4e7d6",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+                "sha256:8851ad098a1e5b50c3c438918aaf2b3bd05f6873b14eeb5ebd9e1281e82711d8",
+                "sha256:b46b989987f871171b659a6612e9e3d9dc62ec326c37dca1229042b93e528bbe",
+                "sha256:257512b6e6b96e24062b024ded82588159813d52cfee8598cf671fe496b58f94",
+                "sha256:a4b86dc21d4076600961c33566fdbe4f0f7402f8ad40fc048707ba836a7d6c15",
+                "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef"
+            ]
+        },
+        "Metadata": {
+            "LastTagTime": "0001-01-01T00:00:00Z"
+        }
+    }
+]
 </pre>
