@@ -22,4 +22,11 @@
 		<module>cpp</module>
 	</modules>
 
+	<distributionManagement>
+		<repository>
+			<id>artifactory</id>
+			<url>http://localhost:8082/ui/native/tektutor</url>
+		</repository>
+	</distributionManagement>
+
 </project>
