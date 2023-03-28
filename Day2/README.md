@@ -41,3 +41,7 @@
   2. Control Groups (CGroups) - used to apply resource quota restrictions
 
 ## Containers vs Hypervisor
+- each container represents one application while each VM represents one Operating system
+- containers doesn't have OS Kernel but VMs have their own OS Kernel
+- container doesn't get their own dedicated hardware but VMs get their own dedicated hardware resources
+- both container and VMS have their own Network stack, IP address and File system
