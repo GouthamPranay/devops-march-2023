@@ -79,6 +79,19 @@ There are 3 co-ordinates just like GPS co-ordinates
 - each Phase can invoke one to many Maven plugins
 - each Maven Plugin supports one to many goals
 - each Plugin goal supports one functionality
+
+
+## What is Super POM?
+- is the ultimate parent POM for all POM files that we write
+- every POM file will inherit the default properties and configurations from Super POM
+- Super POM comes out of the box when we install Apache Maven
+
+## What is Effective POM?
+- is the combination of Super POM and your project specific POM file
+- Maven always creates an effective POM before doing any build activity as an in-memory file
+
+## What is Parent POM?
+- in a multi-module project, we typically write a Parent pom
   
 ## Cloning the TekTutor Training Repository ( Do this only first time )
 ```
