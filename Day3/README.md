@@ -588,3 +588,15 @@ ubuntu1 | SUCCESS => {
     "ping": "pong"
 }
 </pre>
+
+## Lab - Running your first Ansible playbook
+```
+cd ~/devops-march-2023
+git pull
+
+cd Day3/Ansible
+ansible-playbook -i inventory ping-playbook.yml
+```
+
+Expected output
+![Ping Playbook](ping-playbook.png)
