@@ -67,7 +67,7 @@ The ssh key-pair generated above represents the currently logged in user.  It co
 cd ~/devops-march-2023
 git pull
 
-cd Day3/Ansible
+cd Day3/Ansible/CustomAnsibleNodeDockerImages/ubuntu
 cp ~/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/ansible-ubuntu-node .
 docker images
