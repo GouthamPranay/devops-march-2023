@@ -595,6 +595,13 @@ docker run -d --name web2 --hostname web2 nginx:latest
 docker run -d --name web3 --hostname web3 nginx:latest
 ```
 
+Find the IP address of the web1, web2 and web3 containers
+```
+docker inspect -f {{.NetworkSettings.IPAddress}} web1
+docker inspect -f {{.NetworkSettings.IPAddress}} web2
+docker inspect web3 | grep IPA
+```
+
 Let's us list and see if they running
 ```
 docker ps
