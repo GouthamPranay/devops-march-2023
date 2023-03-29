@@ -588,6 +588,8 @@ http://localhost:8080
 
 ## Lab - Setting up a Load Balancer using nginx
 
+![Nginx Load Balancer](nginx-lb.png)
+
 #### Let us create 3 web server containers
 ```
 docker run -d --name web1 --hostname web1 nginx:latest
