@@ -329,6 +329,11 @@ centos                                    centos7   eeb6ee3f44bd   18 months ago
 ubuntu                                    16.04     b6f507652425   19 months ago   135MB
 </pre>
 
+## Removing an image from local registry
+```
+docker rmi busybox:latest
+```
+
 ## Creating your first docker container
 ```
 docker run -dit --name ubuntu1 --hostname ubuntu1 ubuntu:22.04 /bin/bash
@@ -354,3 +359,24 @@ bash: ifconfig: command not found
 root@ubuntu1:/# exit         
 exit
 </pre>
+
+## Create bunch of container in background
+```
+docker run -dit --name ubuntu2 --hostname ubuntu2 ubuntu:22.04 /bin/bash
+docker run -dit --name ubuntu3 --hostname ubuntu3 ubuntu:22.04 /bin/bash
+```
+
+## Deleting a running container forcibly
+```
+docker rm -f ubuntu1
+docker rm -f ubuntu2 ubuntu3
+```
+
+## Deleting a running container gracefully
+```
+docker stop ubuntu1
+docker stop ubuntu2 ubuntu3
+docker rm ubuntu1 
+docker rm ubuntu2 ubuntu3
+```
+
