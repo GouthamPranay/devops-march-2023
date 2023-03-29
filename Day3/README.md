@@ -61,7 +61,7 @@ Let's first generate the ssh key pair ( keep a note of the user rps/root ). Acce
 ```
 ssh-keygen
 ```
-
+The ssh key-pair generated above represents the currently logged in user.  It could rps user or root user in your case.
 
 ```
 cd ~/devops-march-2023
