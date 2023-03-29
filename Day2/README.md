@@ -670,7 +670,7 @@ docker ps
 Get inside the container shell
 ```
 docker exec -it mysql sh
-mysql -u root
+mysql -u root -p
 ```
 When it prompts for password, type 'admin@123' without quotes.
 
