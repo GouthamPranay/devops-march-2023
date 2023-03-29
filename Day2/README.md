@@ -579,3 +579,9 @@ day2-db-1         | 2023-03-29T05:43:31.996022Z 0 [Note] Event Scheduler: Loaded
 day2-db-1         | 2023-03-29T05:43:31.996225Z 0 [Note] mysqld: ready for connections.
 day2-db-1         | Version: '5.7.41'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
 </pre>
+
+
+#### Accessing wordpress dashboard on RPS Centos web browser
+```
+http://localhost:8080
+```
