@@ -379,3 +379,203 @@ docker stop ubuntu2 ubuntu3
 docker rm ubuntu1 
 docker rm ubuntu2 ubuntu3
 ```
+
+## Lab - Deploy wordpress and mysql database ( multi-container application )
+
+#### Install docker compose
+```
+mkdir -p ~/.docker/cli-plugins/
+curl -SL https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+chmod +x ~/.docker/cli-plugins/docker-compose
+docker compose version
+```
+
+#### Deploy wordpress with mysql db
+```
+cd ~/devops-march-2023
+git pull
+
+cd Day2
+docker compose up
+```
+
+Expected output
+<pre>
+Attaching to day2-db-1, day2-wordpress-1
+day2-db-1         | 2023-03-29 05:43:23+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.41-1.el7 started.
+day2-wordpress-1  | WordPress not found in /var/www/html - copying now...
+day2-wordpress-1  | Complete! WordPress has been successfully copied to /var/www/html
+day2-wordpress-1  | No 'wp-config.php' found in /var/www/html, but 'WORDPRESS_...' variables supplied; copying 'wp-config-docker.php' (WORDPRESS_DB_HOST WORDPRESS_DB_NAME WORDPRESS_DB_PASSWORD WORDPRESS_DB_USER)
+day2-db-1         | 2023-03-29 05:43:23+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+day2-db-1         | 2023-03-29 05:43:23+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 5.7.41-1.el7 started.
+day2-wordpress-1  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+day2-wordpress-1  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.18.0.3. Set the 'ServerName' directive globally to suppress this message
+day2-wordpress-1  | [Wed Mar 29 05:43:23.930181 2023] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.56 (Debian) PHP/8.0.28 configured -- resuming normal operations
+day2-wordpress-1  | [Wed Mar 29 05:43:23.930214 2023] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+day2-db-1         | 2023-03-29 05:43:24+00:00 [Note] [Entrypoint]: Initializing database files
+day2-db-1         | 2023-03-29T05:43:24.159310Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+day2-db-1         | 2023-03-29T05:43:24.312627Z 0 [Warning] InnoDB: New log files created, LSN=45790
+day2-db-1         | 2023-03-29T05:43:24.345898Z 0 [Warning] InnoDB: Creating foreign key constraint system tables.
+day2-db-1         | 2023-03-29T05:43:24.402136Z 0 [Warning] No existing UUID has been found, so we assume that this is the first time that this server has been started. Generating a new UUID: 9f244193-cdf4-11ed-a7bc-0242ac120002.
+day2-db-1         | 2023-03-29T05:43:24.403778Z 0 [Warning] Gtid table is not ready to be used. Table 'mysql.gtid_executed' cannot be opened.
+day2-db-1         | 2023-03-29T05:43:24.524826Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
+day2-db-1         | 2023-03-29T05:43:24.524837Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
+day2-db-1         | 2023-03-29T05:43:24.525264Z 0 [Warning] CA certificate ca.pem is self signed.
+day2-db-1         | 2023-03-29T05:43:24.803689Z 1 [Warning] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+day2-db-1         | 2023-03-29 05:43:27+00:00 [Note] [Entrypoint]: Database files initialized
+day2-db-1         | 2023-03-29 05:43:27+00:00 [Note] [Entrypoint]: Starting temporary server
+day2-db-1         | 2023-03-29 05:43:27+00:00 [Note] [Entrypoint]: Waiting for server startup
+day2-db-1         | 2023-03-29T05:43:27.498845Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+day2-db-1         | 2023-03-29T05:43:27.500237Z 0 [Note] mysqld (mysqld 5.7.41) starting as process 125 ...
+day2-db-1         | 2023-03-29T05:43:27.503002Z 0 [Note] InnoDB: PUNCH HOLE support available
+day2-db-1         | 2023-03-29T05:43:27.503019Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+day2-db-1         | 2023-03-29T05:43:27.503021Z 0 [Note] InnoDB: Uses event mutexes
+day2-db-1         | 2023-03-29T05:43:27.503025Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+day2-db-1         | 2023-03-29T05:43:27.503027Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.12
+day2-db-1         | 2023-03-29T05:43:27.503029Z 0 [Note] InnoDB: Using Linux native AIO
+day2-db-1         | 2023-03-29T05:43:27.503243Z 0 [Note] InnoDB: Number of pools: 1
+day2-db-1         | 2023-03-29T05:43:27.503330Z 0 [Note] InnoDB: Using CPU crc32 instructions
+day2-db-1         | 2023-03-29T05:43:27.505181Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+day2-db-1         | 2023-03-29T05:43:27.511762Z 0 [Note] InnoDB: Completed initialization of buffer pool
+day2-db-1         | 2023-03-29T05:43:27.513764Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+day2-db-1         | 2023-03-29T05:43:27.527081Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+day2-db-1         | 2023-03-29T05:43:27.544638Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+day2-db-1         | 2023-03-29T05:43:27.544709Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+day2-db-1         | 2023-03-29T05:43:27.565035Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+day2-db-1         | 2023-03-29T05:43:27.565776Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+day2-db-1         | 2023-03-29T05:43:27.565783Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+day2-db-1         | 2023-03-29T05:43:27.566148Z 0 [Note] InnoDB: Waiting for purge to start
+day2-db-1         | 2023-03-29T05:43:27.616378Z 0 [Note] InnoDB: 5.7.41 started; log sequence number 2762314
+day2-db-1         | 2023-03-29T05:43:27.616762Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+day2-db-1         | 2023-03-29T05:43:27.617062Z 0 [Note] Plugin 'FEDERATED' is disabled.
+day2-db-1         | 2023-03-29T05:43:27.619979Z 0 [Note] InnoDB: Buffer pool(s) load completed at 230329  5:43:27
+day2-db-1         | 2023-03-29T05:43:27.629224Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+day2-db-1         | 2023-03-29T05:43:27.629240Z 0 [Note] Skipping generation of SSL certificates as certificate files are present in data directory.
+day2-db-1         | 2023-03-29T05:43:27.629247Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
+day2-db-1         | 2023-03-29T05:43:27.629251Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
+day2-db-1         | 2023-03-29T05:43:27.630389Z 0 [Warning] CA certificate ca.pem is self signed.
+day2-db-1         | 2023-03-29T05:43:27.630446Z 0 [Note] Skipping generation of RSA key pair as key files are present in data directory.
+day2-db-1         | 2023-03-29T05:43:27.633448Z 0 [Warning] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+day2-db-1         | 2023-03-29T05:43:27.644122Z 0 [Note] Event Scheduler: Loaded 0 events
+day2-db-1         | 2023-03-29T05:43:27.644420Z 0 [Note] mysqld: ready for connections.
+day2-db-1         | Version: '5.7.41'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server (GPL)
+day2-db-1         | 2023-03-29 05:43:28+00:00 [Note] [Entrypoint]: Temporary server started.
+day2-db-1         | '/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+day2-db-1         | 2023-03-29T05:43:28.386859Z 3 [Note] InnoDB: Stopping purge
+day2-db-1         | 2023-03-29T05:43:28.390362Z 3 [Note] InnoDB: Resuming purge
+day2-db-1         | 2023-03-29T05:43:28.391915Z 3 [Note] InnoDB: Stopping purge
+day2-db-1         | 2023-03-29T05:43:28.394988Z 3 [Note] InnoDB: Resuming purge
+day2-db-1         | 2023-03-29T05:43:28.396624Z 3 [Note] InnoDB: Stopping purge
+day2-db-1         | 2023-03-29T05:43:28.399721Z 3 [Note] InnoDB: Resuming purge
+day2-db-1         | 2023-03-29T05:43:28.401925Z 3 [Note] InnoDB: Stopping purge
+day2-db-1         | 2023-03-29T05:43:28.406064Z 3 [Note] InnoDB: Resuming purge
+day2-db-1         | Warning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+day2-db-1         | Warning: Unable to load '/usr/share/zoneinfo/leapseconds' as time zone. Skipping it.
+day2-db-1         | Warning: Unable to load '/usr/share/zoneinfo/tzdata.zi' as time zone. Skipping it.
+day2-db-1         | Warning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+day2-db-1         | Warning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+day2-db-1         | 2023-03-29 05:43:29+00:00 [Note] [Entrypoint]: GENERATED ROOT PASSWORD: 5YP/PuH4beIYLTakZp1WjCOohoeIQrOE
+day2-db-1         | 2023-03-29 05:43:29+00:00 [Note] [Entrypoint]: Creating database exampledb
+day2-db-1         | 2023-03-29 05:43:29+00:00 [Note] [Entrypoint]: Creating user exampleuser
+day2-db-1         | 2023-03-29 05:43:29+00:00 [Note] [Entrypoint]: Giving user exampleuser access to schema exampledb
+day2-db-1         | 
+day2-db-1         | 2023-03-29 05:43:29+00:00 [Note] [Entrypoint]: Stopping temporary server
+day2-db-1         | 2023-03-29T05:43:29.653160Z 0 [Note] Giving 0 client threads a chance to die gracefully
+day2-db-1         | 2023-03-29T05:43:29.653198Z 0 [Note] Shutting down slave threads
+day2-db-1         | 2023-03-29T05:43:29.653205Z 0 [Note] Forcefully disconnecting 0 remaining clients
+day2-db-1         | 2023-03-29T05:43:29.653214Z 0 [Note] Event Scheduler: Purging the queue. 0 events
+day2-db-1         | 2023-03-29T05:43:29.653276Z 0 [Note] Binlog end
+day2-db-1         | 2023-03-29T05:43:29.654187Z 0 [Note] Shutting down plugin 'ngram'
+day2-db-1         | 2023-03-29T05:43:29.654203Z 0 [Note] Shutting down plugin 'partition'
+day2-db-1         | 2023-03-29T05:43:29.654209Z 0 [Note] Shutting down plugin 'BLACKHOLE'
+day2-db-1         | 2023-03-29T05:43:29.654215Z 0 [Note] Shutting down plugin 'ARCHIVE'
+day2-db-1         | 2023-03-29T05:43:29.654219Z 0 [Note] Shutting down plugin 'PERFORMANCE_SCHEMA'
+day2-db-1         | 2023-03-29T05:43:29.654273Z 0 [Note] Shutting down plugin 'MRG_MYISAM'
+day2-db-1         | 2023-03-29T05:43:29.654280Z 0 [Note] Shutting down plugin 'MyISAM'
+day2-db-1         | 2023-03-29T05:43:29.654291Z 0 [Note] Shutting down plugin 'INNODB_SYS_VIRTUAL'
+day2-db-1         | 2023-03-29T05:43:29.654297Z 0 [Note] Shutting down plugin 'INNODB_SYS_DATAFILES'
+day2-db-1         | 2023-03-29T05:43:29.654302Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESPACES'
+day2-db-1         | 2023-03-29T05:43:29.654306Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN_COLS'
+day2-db-1         | 2023-03-29T05:43:29.654311Z 0 [Note] Shutting down plugin 'INNODB_SYS_FOREIGN'
+day2-db-1         | 2023-03-29T05:43:29.654315Z 0 [Note] Shutting down plugin 'INNODB_SYS_FIELDS'
+day2-db-1         | 2023-03-29T05:43:29.654319Z 0 [Note] Shutting down plugin 'INNODB_SYS_COLUMNS'
+day2-db-1         | 2023-03-29T05:43:29.654323Z 0 [Note] Shutting down plugin 'INNODB_SYS_INDEXES'
+day2-db-1         | 2023-03-29T05:43:29.654329Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLESTATS'
+day2-db-1         | 2023-03-29T05:43:29.654333Z 0 [Note] Shutting down plugin 'INNODB_SYS_TABLES'
+day2-db-1         | 2023-03-29T05:43:29.654337Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_TABLE'
+day2-db-1         | 2023-03-29T05:43:29.654341Z 0 [Note] Shutting down plugin 'INNODB_FT_INDEX_CACHE'
+day2-db-1         | 2023-03-29T05:43:29.654345Z 0 [Note] Shutting down plugin 'INNODB_FT_CONFIG'
+day2-db-1         | 2023-03-29T05:43:29.654349Z 0 [Note] Shutting down plugin 'INNODB_FT_BEING_DELETED'
+day2-db-1         | 2023-03-29T05:43:29.654354Z 0 [Note] Shutting down plugin 'INNODB_FT_DELETED'
+day2-db-1         | 2023-03-29T05:43:29.654358Z 0 [Note] Shutting down plugin 'INNODB_FT_DEFAULT_STOPWORD'
+day2-db-1         | 2023-03-29T05:43:29.654362Z 0 [Note] Shutting down plugin 'INNODB_METRICS'
+day2-db-1         | 2023-03-29T05:43:29.654367Z 0 [Note] Shutting down plugin 'INNODB_TEMP_TABLE_INFO'
+day2-db-1         | 2023-03-29T05:43:29.654371Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_POOL_STATS'
+day2-db-1         | 2023-03-29T05:43:29.654375Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE_LRU'
+day2-db-1         | 2023-03-29T05:43:29.654379Z 0 [Note] Shutting down plugin 'INNODB_BUFFER_PAGE'
+day2-db-1         | 2023-03-29T05:43:29.654383Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX_RESET'
+day2-db-1         | 2023-03-29T05:43:29.654388Z 0 [Note] Shutting down plugin 'INNODB_CMP_PER_INDEX'
+day2-db-1         | 2023-03-29T05:43:29.654393Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM_RESET'
+day2-db-1         | 2023-03-29T05:43:29.654397Z 0 [Note] Shutting down plugin 'INNODB_CMPMEM'
+day2-db-1         | 2023-03-29T05:43:29.654401Z 0 [Note] Shutting down plugin 'INNODB_CMP_RESET'
+day2-db-1         | 2023-03-29T05:43:29.654406Z 0 [Note] Shutting down plugin 'INNODB_CMP'
+day2-db-1         | 2023-03-29T05:43:29.654410Z 0 [Note] Shutting down plugin 'INNODB_LOCK_WAITS'
+day2-db-1         | 2023-03-29T05:43:29.654415Z 0 [Note] Shutting down plugin 'INNODB_LOCKS'
+day2-db-1         | 2023-03-29T05:43:29.654420Z 0 [Note] Shutting down plugin 'INNODB_TRX'
+day2-db-1         | 2023-03-29T05:43:29.654424Z 0 [Note] Shutting down plugin 'InnoDB'
+day2-db-1         | 2023-03-29T05:43:29.654547Z 0 [Note] InnoDB: FTS optimize thread exiting.
+day2-db-1         | 2023-03-29T05:43:29.654656Z 0 [Note] InnoDB: Starting shutdown...
+day2-db-1         | 2023-03-29T05:43:29.754951Z 0 [Note] InnoDB: Dumping buffer pool(s) to /var/lib/mysql/ib_buffer_pool
+day2-db-1         | 2023-03-29T05:43:29.756036Z 0 [Note] InnoDB: Buffer pool(s) dump completed at 230329  5:43:29
+day2-db-1         | 2023-03-29T05:43:31.470377Z 0 [Note] InnoDB: Shutdown completed; log sequence number 12213276
+day2-db-1         | 2023-03-29T05:43:31.474447Z 0 [Note] InnoDB: Removed temporary tablespace data file: "ibtmp1"
+day2-db-1         | 2023-03-29T05:43:31.474473Z 0 [Note] Shutting down plugin 'MEMORY'
+day2-db-1         | 2023-03-29T05:43:31.474480Z 0 [Note] Shutting down plugin 'CSV'
+day2-db-1         | 2023-03-29T05:43:31.474486Z 0 [Note] Shutting down plugin 'sha256_password'
+day2-db-1         | 2023-03-29T05:43:31.474490Z 0 [Note] Shutting down plugin 'mysql_native_password'
+day2-db-1         | 2023-03-29T05:43:31.474750Z 0 [Note] Shutting down plugin 'binlog'
+day2-db-1         | 2023-03-29T05:43:31.477979Z 0 [Note] mysqld: Shutdown complete
+day2-db-1         | 
+day2-db-1         | 2023-03-29 05:43:31+00:00 [Note] [Entrypoint]: Temporary server stopped
+day2-db-1         | 
+day2-db-1         | 2023-03-29 05:43:31+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+day2-db-1         | 
+day2-db-1         | 2023-03-29T05:43:31.859425Z 0 [Warning] TIMESTAMP with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+day2-db-1         | 2023-03-29T05:43:31.860864Z 0 [Note] mysqld (mysqld 5.7.41) starting as process 1 ...
+day2-db-1         | 2023-03-29T05:43:31.863602Z 0 [Note] InnoDB: PUNCH HOLE support available
+day2-db-1         | 2023-03-29T05:43:31.863620Z 0 [Note] InnoDB: Mutexes and rw_locks use GCC atomic builtins
+day2-db-1         | 2023-03-29T05:43:31.863622Z 0 [Note] InnoDB: Uses event mutexes
+day2-db-1         | 2023-03-29T05:43:31.863625Z 0 [Note] InnoDB: GCC builtin __atomic_thread_fence() is used for memory barrier
+day2-db-1         | 2023-03-29T05:43:31.863627Z 0 [Note] InnoDB: Compressed tables use zlib 1.2.12
+day2-db-1         | 2023-03-29T05:43:31.863630Z 0 [Note] InnoDB: Using Linux native AIO
+day2-db-1         | 2023-03-29T05:43:31.863842Z 0 [Note] InnoDB: Number of pools: 1
+day2-db-1         | 2023-03-29T05:43:31.863928Z 0 [Note] InnoDB: Using CPU crc32 instructions
+day2-db-1         | 2023-03-29T05:43:31.865366Z 0 [Note] InnoDB: Initializing buffer pool, total size = 128M, instances = 1, chunk size = 128M
+day2-db-1         | 2023-03-29T05:43:31.872358Z 0 [Note] InnoDB: Completed initialization of buffer pool
+day2-db-1         | 2023-03-29T05:43:31.874328Z 0 [Note] InnoDB: If the mysqld execution user is authorized, page cleaner thread priority can be changed. See the man page of setpriority().
+day2-db-1         | 2023-03-29T05:43:31.886715Z 0 [Note] InnoDB: Highest supported file format is Barracuda.
+day2-db-1         | 2023-03-29T05:43:31.898871Z 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+day2-db-1         | 2023-03-29T05:43:31.898941Z 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+day2-db-1         | 2023-03-29T05:43:31.918113Z 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+day2-db-1         | 2023-03-29T05:43:31.918870Z 0 [Note] InnoDB: 96 redo rollback segment(s) found. 96 redo rollback segment(s) are active.
+day2-db-1         | 2023-03-29T05:43:31.918877Z 0 [Note] InnoDB: 32 non-redo rollback segment(s) are active.
+day2-db-1         | 2023-03-29T05:43:31.919215Z 0 [Note] InnoDB: Waiting for purge to start
+day2-db-1         | 2023-03-29T05:43:31.969436Z 0 [Note] InnoDB: 5.7.41 started; log sequence number 12213276
+day2-db-1         | 2023-03-29T05:43:31.969846Z 0 [Note] InnoDB: Loading buffer pool(s) from /var/lib/mysql/ib_buffer_pool
+day2-db-1         | 2023-03-29T05:43:31.970143Z 0 [Note] Plugin 'FEDERATED' is disabled.
+day2-db-1         | 2023-03-29T05:43:31.976665Z 0 [Note] InnoDB: Buffer pool(s) load completed at 230329  5:43:31
+day2-db-1         | 2023-03-29T05:43:31.983065Z 0 [Note] Found ca.pem, server-cert.pem and server-key.pem in data directory. Trying to enable SSL support using them.
+day2-db-1         | 2023-03-29T05:43:31.983078Z 0 [Note] Skipping generation of SSL certificates as certificate files are present in data directory.
+day2-db-1         | 2023-03-29T05:43:31.983083Z 0 [Warning] A deprecated TLS version TLSv1 is enabled. Please use TLSv1.2 or higher.
+day2-db-1         | 2023-03-29T05:43:31.983086Z 0 [Warning] A deprecated TLS version TLSv1.1 is enabled. Please use TLSv1.2 or higher.
+day2-db-1         | 2023-03-29T05:43:31.984057Z 0 [Warning] CA certificate ca.pem is self signed.
+day2-db-1         | 2023-03-29T05:43:31.984104Z 0 [Note] Skipping generation of RSA key pair as key files are present in data directory.
+day2-db-1         | 2023-03-29T05:43:31.984481Z 0 [Note] Server hostname (bind-address): '*'; port: 3306
+day2-db-1         | 2023-03-29T05:43:31.984532Z 0 [Note] IPv6 is available.
+day2-db-1         | 2023-03-29T05:43:31.984548Z 0 [Note]   - '::' resolves to '::';
+day2-db-1         | 2023-03-29T05:43:31.984568Z 0 [Note] Server socket created on IP: '::'.
+day2-db-1         | 2023-03-29T05:43:31.986371Z 0 [Warning] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+day2-db-1         | 2023-03-29T05:43:31.996022Z 0 [Note] Event Scheduler: Loaded 0 events
+day2-db-1         | 2023-03-29T05:43:31.996225Z 0 [Note] mysqld: ready for connections.
+day2-db-1         | Version: '5.7.41'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server (GPL)
+</pre>
