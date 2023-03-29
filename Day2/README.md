@@ -696,7 +696,7 @@ docker run -d --name mysql --hostname mysql -v /tmp/mysql:/var/lib/mysql -e MYSQ
 
 docker exec -it mysql sh
 
-mysql -u root
+mysql -u root -p
 ```
 When it prompts for password, type 'admin@123' without quotes.
 
