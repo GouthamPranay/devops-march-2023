@@ -600,3 +600,15 @@ ansible-playbook -i inventory ping-playbook.yml
 
 Expected output
 ![Ping Playbook](ping-playbook.png)
+
+## Lab - Running your Ansible playbook with dynamic inventory
+```
+cd ~/devops-march-2023
+git pull
+
+cd Day3/Ansible
+ansible-playbook -i ansible-docker-dynamic-inventory/dynamic_inventory.py ping-playbook.yml
+```
+
+Expected output
+![Ping Playbook](ping-playbook-dynamic.png)
