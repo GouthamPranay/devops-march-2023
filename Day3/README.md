@@ -18,7 +18,7 @@
     - production grade
    
   - AWX 
-    - open sources
+    - open source
     - developed on top of opensource Ansible core
     - supports user management, teams
     - supports web interface
