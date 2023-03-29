@@ -485,6 +485,10 @@ e5af7c55315e   tektutor/ansible-ubuntu-node:latest   "/usr/sbin/sshd -D"      2 
 
 
 Testing the ansible nodes
+```
+ssh -p 2001 root@localhost  
+ssh -p 2001 root@localhost  
+```
 Expected output
 <pre>
 jegan@tektutor.org $ ssh -p 2001 root@localhost  
