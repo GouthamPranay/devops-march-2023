@@ -585,3 +585,64 @@ day2-db-1         | Version: '5.7.41'  socket: '/var/run/mysqld/mysqld.sock'  po
 ```
 http://localhost:8080
 ```
+
+## Lab - Setting up a Load Balancer using nginx
+
+#### Let us create 3 web server containers
+```
+docker run -d --name web1 --hostname web1 nginx:latest
+docker run -d --name web2 --hostname web2 nginx:latest
+docker run -d --name web3 --hostname web3 nginx:latest
+```
+
+Let's us list and see if they running
+```
+docker ps
+```
+
+### Let us create the Load Balancer container with port-forward to expose the container service to outside world
+```
+docker run -d --name lb --hostname lb -p 8090:80 nginx:latest
+```
+
+See if the lb container is running
+```
+docker ps
+```
+
+Copy the lb configuration into the lb container
+```
+cd ~/devops-march-2023
+git pull
+
+cd Day2
+docker cp nginx.conf lb:/etc/nginx/nginx.conf
+```
+
+We need to restart the lb container to apply the lb config changes
+```
+docker restart lb
+```
+
+See if the lb container runs after config changes
+```
+docker ps
+```
+
+Let's customize the index.html web page in every web server
+```
+echo "Server 1" > index.html
+docker cp index.html web1:/usr/share/nginx/html/index.html
+
+echo "Server 2" > index.html
+docker cp index.html web2:/usr/share/nginx/html/index.html
+
+echo "Server 3" > index.html
+docker cp index.html web3:/usr/share/nginx/html/index.html
+```
+
+Testing the round-robin lb configuration from your rps centos web browser
+```
+http://localhost:8090
+```
+
