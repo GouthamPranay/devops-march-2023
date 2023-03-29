@@ -483,3 +483,76 @@ e5af7c55315e   tektutor/ansible-ubuntu-node:latest   "/usr/sbin/sshd -D"      2 
 988919ff4778   tektutor/ansible-ubuntu-node:latest   "/usr/sbin/sshd -D"      14 seconds ago   Up 13 seconds   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
 </pre>
 
+
+Testing the ansible nodes
+Expected output
+<pre>
+jegan@tektutor.org $ ssh -p 2001 root@localhost  
+The authenticity of host '[localhost]:2001 ([127.0.0.1]:2001)' can't be established.
+ED25519 key fingerprint is SHA256:KMXxppCS5838BDtj9l9W/HlhbWkBvzWB4j4jqmp7xBM.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[localhost]:2001' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 5.19.0-38-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu1:~# exit
+logout
+Connection to localhost closed.
+
+jegan@tektutor.org $ ssh -p 2002 root@localhost
+The authenticity of host '[localhost]:2002 ([127.0.0.1]:2002)' can't be established.
+ED25519 key fingerprint is SHA256:KMXxppCS5838BDtj9l9W/HlhbWkBvzWB4j4jqmp7xBM.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:2: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '[localhost]:2002' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 5.19.0-38-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+root@ubuntu2:~# exit
+logout
+Connection to localhost closed.
+
+jegan@tektutor.org $ ssh -p 2002 root@localhost
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 5.19.0-38-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+Last login: Wed Mar 29 11:17:08 2023 from 172.17.0.1
+root@ubuntu2:~# exit
+logout
+Connection to localhost closed.
+
+jegan@tektutor.org $ ssh -p 2001 root@localhost
+Welcome to Ubuntu 16.04.7 LTS (GNU/Linux 5.19.0-38-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+Last login: Wed Mar 29 11:16:57 2023 from 172.17.0.1
+root@ubuntu1:~# exit
+logout
+Connection to localhost closed.
+</pre>
