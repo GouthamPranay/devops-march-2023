@@ -710,5 +710,6 @@ exit
 exit
 ```
 
+Expectation is, you are supposed to see the tektutor database and the records stored in Training table intact.  This is because, we stored the mysql db data in an external host path i.e /tmp/mysql
 
 
