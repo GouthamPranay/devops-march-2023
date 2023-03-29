@@ -453,5 +453,12 @@ Removing intermediate container 5641a43becdb
  ---> 4c9cf9dbb21f
 Successfully built 4c9cf9dbb21f
 Successfully tagged tektutor/ansible-ubuntu-node:latest
+
+jegan@tektutor.org $ docker images
+REPOSITORY                                TAG       IMAGE ID       CREATED         SIZE
+<b>tektutor/ansible-ubuntu-node              latest    4c9cf9dbb21f   7 minutes ago   220MB</b>
+wordpress                                 latest    edabd661e065   33 hours ago    615MB
+docker.bintray.io/jfrog/artifactory-oss   latest    1b425cceed92   2 days ago      1.51GB
+ubuntu                                    16.04     b6f507652425   19 months ago   135MB
 </pre>
 
