@@ -655,3 +655,60 @@ Testing the round-robin lb configuration from your rps centos web browser
 http://localhost:8090
 ```
 
+## Lab - Volume Mounting ( Externally storing db data )
+```
+mkdir -p /tmp/mysql
+
+docker run -d --name mysql --hostname mysql -v /tmp/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=admin@123 mysql:latest
+```
+
+List and see if the mysql container is running
+```
+docker ps
+```
+
+Get inside the container shell
+```
+docker exec -it mysql sh
+mysql -u root
+```
+When it prompts for password, type 'admin@123' without quotes.
+
+Now let's create a Database
+```
+CREATE DATABASE tektutor;
+USE tektutor;
+CREATE TABLE Training ( id INT NOT NULL, name VARCHAR(50), duration VARCHAR(50), PRIMARY KEY(id) );
+INSERT INTO Training VALUES ( 1, "DevOps", "5 Days" );
+SELECT * FROM Training;
+exit
+exit
+```
+
+Now let's delete the mysql container
+```
+docker rm -f mysql
+```
+
+Now create a new container
+```
+docker run -d --name mysql --hostname mysql -v /tmp/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=admin@123 mysql:latest
+
+docker exec -it mysql sh
+
+mysql -u root
+```
+When it prompts for password, type 'admin@123' without quotes.
+
+Let' see if the database that we created in the previous mysql container is still intact
+```
+SHOW DATABASES;
+USE tektutor;
+SHOW TABLES;
+SELECT * FROM Training;
+exit
+exit
+```
+
+
+
