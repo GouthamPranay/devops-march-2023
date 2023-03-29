@@ -46,7 +46,7 @@ def get_host_vars(m):
 class DockerInventory():
       def __init__(self):
           self.inventory = {} # Ansible Inventory
-          machines = executeDockerCommand("ps", "-q").splitlines()
+          machines = executeDockerCommand("ps", "-q", "-f name=ubuntu", "-f name=centos").splitlines()
           json_data = {m.decode("utf-8"): get_host_vars(m.decode("utf-8")) for m in machines}
           print ( json.dumps(json_data,indent=4,sort_keys=True) )
             
