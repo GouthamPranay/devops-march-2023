@@ -462,3 +462,24 @@ docker.bintray.io/jfrog/artifactory-oss   latest    1b425cceed92   2 days ago   
 ubuntu                                    16.04     b6f507652425   19 months ago   135MB
 </pre>
 
+## Lab - Creating ubuntu ansible node containers
+```
+docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-ubuntu-node:latest
+docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ansible-ubuntu-node:latest
+docker ps
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $ docker run -d --name ubuntu1 --hostname ubuntu1 -p 2001:22 -p 8001:80 tektutor/ansible-ubuntu-node:latest
+988919ff4778470126dfe7145377ddc9bfddcde757c374b9a6775557f21eea6e
+
+jegan@tektutor.org $ docker run -d --name ubuntu2 --hostname ubuntu2 -p 2002:22 -p 8002:80 tektutor/ansible-ubuntu-node:latest
+e5af7c55315e58fdf2a0db63b2bb6826d7d075a5670105be0513741517f21b94
+
+jegan@tektutor.org $ docker ps
+CONTAINER ID   IMAGE                                 COMMAND                  CREATED          STATUS          PORTS                                                                          NAMES
+e5af7c55315e   tektutor/ansible-ubuntu-node:latest   "/usr/sbin/sshd -D"      2 seconds ago    Up 1 second     0.0.0.0:2002->22/tcp, :::2002->22/tcp, 0.0.0.0:8002->80/tcp, :::8002->80/tcp   ubuntu2
+988919ff4778   tektutor/ansible-ubuntu-node:latest   "/usr/sbin/sshd -D"      14 seconds ago   Up 13 seconds   0.0.0.0:2001->22/tcp, :::2001->22/tcp, 0.0.0.0:8001->80/tcp, :::8001->80/tcp   ubuntu1
+</pre>
+
