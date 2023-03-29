@@ -175,7 +175,7 @@ docker image inspect docker.bintray.io/jfrog/artifactory-oss
 
 Expected output
 <pre>
-jegan@tektutor.org  ~  docker image inspect docker.bintray.io/jfrog/artifactory-oss
+jegan@tektutor.org $ docker image inspect docker.bintray.io/jfrog/artifactory-oss
 [
     {
         "Id": "sha256:1b425cceed925e92ecae539ffcab42e4821e709e15c45484178c6458c6f4a250",
