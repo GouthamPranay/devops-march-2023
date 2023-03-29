@@ -560,3 +560,31 @@ root@ubuntu1:~# exit
 logout
 Connection to localhost closed.
 </pre>
+
+## Lab - Running ansible ping ad-hoc command
+```
+cd ~/devops-march-2023
+git pull
+
+cd Day3/Ansible
+ansible -i inventory all -m ping
+```
+
+Expected output
+<pre>
+jegan@tektutor.org $ ansible -i inventory all -m ping
+ubuntu2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+ubuntu1 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python3"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+</pre>
