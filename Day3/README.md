@@ -75,7 +75,7 @@ docker images
 
 Expected output
 <pre>
-ible-ubuntu-node:latest .
+jegan@tektutor.org $ <b>docker build -t tektutor/ansible-ubuntu-node:latest .</b>
 Sending build context to Docker daemon  4.096kB
 Step 1/12 : FROM ubuntu:16.04
  ---> b6f507652425
