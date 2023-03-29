@@ -1,0 +1,6 @@
+- name: This playbook will ping all ansible nodes
+  hosts: all
+  gather_facts: no
+  tasks:
+  - name: Ping the ansible node
+    ping:
