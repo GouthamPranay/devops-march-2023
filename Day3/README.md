@@ -607,7 +607,7 @@ cd ~/devops-march-2023
 git pull
 
 cd Day3/Ansible
-ansible-playbook -i ansible-docker-dynamic-inventory/dynamic_inventory.py ping-playbook.yml
+ansible-playbook -i dynamic_inventory.py ping-playbook.yml
 ```
 
 Expected output
