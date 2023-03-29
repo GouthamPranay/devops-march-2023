@@ -56,11 +56,19 @@ ansible 2.10.8
 </pre>
 
 ## Lab - Building a custom ubuntu ansible node container image
+
+Let's first generate the ssh key pair ( keep a note of the user rps/root ). Accept all defaults by hitting enter 3 times
+```
+ssh-keygen
+```
+
+
 ```
 cd ~/devops-march-2023
 git pull
 
 cd Day3/Ansible
+cp ~/.ssh/id_rsa.pub authorized_keys
 docker build -t tektutor/ansible-ubuntu-node .
 docker images
 ```
