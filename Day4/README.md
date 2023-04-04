@@ -21,7 +21,7 @@ source ~/.bashrc
 mvn --version
 ```
 
-## Setup JDK 17
+## Setup JDK 18
 ```
 cd ~/Downloads
 sudo yum install -y curl wget
