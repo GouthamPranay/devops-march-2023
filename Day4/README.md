@@ -114,3 +114,16 @@ Expected output
   - Bamboo
   - TeamCity
   - Microsoft Team Foundation Server
+
+
+## Downloading Jenkins war file
+```
+cd ~/Downloads
+wget https://get.jenkins.io/war-stable/2.387.1/jenkins.war
+```
+
+Launching jenkins
+```
+cd ~/Downloads
+java -jar ./jenkins.war
+```
