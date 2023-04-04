@@ -125,3 +125,6 @@ java -jar ./jenkins.war
 
 Expected output
 ![Jenkins](jenkins-1.png)
+![Jenkins](jenkins-2.png)
+![Jenkins](jenkins-3.png)
+![Jenkins](jenkins-4.png)
