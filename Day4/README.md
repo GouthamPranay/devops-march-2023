@@ -114,4 +114,3 @@ Expected output
   - Bamboo
   - TeamCity
   - Microsoft Team Foundation Server
-
