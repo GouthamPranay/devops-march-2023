@@ -691,6 +691,10 @@ Expected output
 When it prompts to change the password, type 'Admin@123' without quotes.
 
 ## ⛹️‍♀️ Lab - Deploying application artifacts to Jfrog Artifactory
+
+Edit the Maven settings.xml and add the below server credentials
+![Maven settings file](maven-setting-xml.png)
+
 ```
 cd ~/devops-march-2023
 git pull
