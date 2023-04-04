@@ -111,6 +111,9 @@ Expected output
 
 
 ## Downloading Jenkins war file
+
+For step by step instruction, you may follow my medium blog here https://medium.com/tektutor/ci-cd-with-maven-github-docker-jenkins-aca28c252fec
+
 ```
 cd ~/Downloads
 wget https://get.jenkins.io/war-stable/2.387.1/jenkins.war
