@@ -62,3 +62,10 @@ sudo su $USER
 docker --version
 docker images
 ```
+
+## Install Ansible in CentOS
+```
+sudo yum install -y epel-release
+sudo yum install -y ansible
+ansible --version
+```
