@@ -91,7 +91,27 @@ Expected output
 ## What is DevOps?
 
 ## What is Continuous Integration (CI) ?
+- application source code is Integrated several times a day
+- each code commit, results in triggering a build, which will initiate a pipeline that compiles your code, performs automated tests and share the build reports(along with test report)
 
 ## What is Continuous Deployment (CD) ?
+- CI certified builds are deployed automatically onto QA environments for further automated tests
 
 ## What is Continuous Delivery (CD) ?
+- The QA certified application binaries are automatically delivered to the live production environment or to the customer's staging environments
+- the customer would then test either manually or using automated test cases and decide whether they wanted to make it live
+- customer will share feedback based on their product experience
+
+## What is Jenkins?
+- CI Build Server
+- Kohsuke Kawaguchi while working at Sun Microsystem developed Jenkins in Java as an opensource CI Build Server
+- Sun Microsystems got acquired by Oracle
+- initially the product was developed as Hudson
+- When the Kohsuke Kawaguchi and like minded people didn't agree with Oracle's plan for Hudson, the team got split into two and many original developers came out of Oracle and they started developing Hudson by forking a new branch called Jenkins. The team which stayed back at Oracle continues to develop the Hudson
+- both Hudson and Jenkins shares lot of common code
+- Enterprise edition of Jenkins is called Cloudbees
+- Alternates
+  - Bamboo
+  - TeamCity
+  - Microsoft Team Foundation Server
+
