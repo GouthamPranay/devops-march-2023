@@ -21,21 +21,15 @@ source ~/.bashrc
 mvn --version
 ```
 
-## Setup JDK 18
+## Setup JDK 11
 ```
-cd ~/Downloads
-sudo yum install -y curl wget
-
-curl -O https://download.java.net/java/GA/jdk18/43f95e8614114aeaa8e8a5fcf20a682d/36/GPL/openjdk-18_linux-x64_bin.tar.gz
-
-tar xvf openjdk-18_linux-x64_bin.tar.gz
-
-sudo mv jdk-18 /opt/
+sudo yum install -y epel-release
+sudo yum install -y java-11-openjdk-devel
 ```
 
 Edit your ~/.bashrc file and append the below lines at the end of the file
 ```
-export JAVA_HOME=/opt/jdk-18
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.18.0.10-1.el7_9.x86_64
 export M2_HOME=~/Downloads/apache-maven-3.9.1
 export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH
 ```
