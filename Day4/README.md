@@ -69,3 +69,15 @@ sudo yum install -y epel-release
 sudo yum install -y ansible
 ansible --version
 ```
+
+## Lab - Install nginx web server onto Ansible nodes using Ansible playbook
+```
+cd ~/devops-march-2023
+git pull
+
+cd Day4/Ansible
+ansible-playbook -i inventory install-nginx-playbook.yml
+```
+
+Expected output
+![Install nginx playbook](install-nginx-playbook-1.png)
