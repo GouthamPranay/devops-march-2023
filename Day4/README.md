@@ -130,4 +130,4 @@ java -jar ./jenkins.war --enable-future-java
 ```
 
 Expected output
-[Jenkins](jenkins-1.png)
+![Jenkins](jenkins-1.png)
