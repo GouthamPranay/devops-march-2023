@@ -141,3 +141,18 @@ We need to install the below plugins ( Manage Jenkins --> Manage Plugins --> Ava
 4. Ansible 
 5. Ansible Tower
 6. Build Pipeline
+
+
+## Lab - Creating Maven style CI Job in Jenkins
+![Maven Job](maven-job-1.png)
+![Maven Job](maven-job-2.png)
+![Maven Job](maven-job-3.png)
+![Maven Job](maven-job-4.png)
+![Maven Job](maven-job-5.png)
+![Maven Job](maven-job-6.png)
+![Maven Job](maven-job-7.png)
+![Maven Job](maven-job-8.png)
+![Maven Job](maven-job-9.png)
+![Maven Job](maven-job-10.png)
+![Maven Job](maven-job-11.png)
+![Maven Job](maven-job-12.png)
