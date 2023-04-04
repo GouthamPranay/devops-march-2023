@@ -18,7 +18,7 @@
     file: path=/var/html state=directory mode=0755
 
   - name: Deploy the custom web page into the nginx web server
-    template: src=index.html dest=/var/html/index.html
+    template: src=index.html.j2 dest=/var/html/index.html
 
   - name: Configure nginx web root folder to our custom folder
     copy: src=default  dest=/etc/nginx/sites-available/default
