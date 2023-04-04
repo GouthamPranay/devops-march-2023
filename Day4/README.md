@@ -125,5 +125,9 @@ wget https://get.jenkins.io/war-stable/2.387.1/jenkins.war
 Launching jenkins
 ```
 cd ~/Downloads
+
 java -jar ./jenkins.war
 ```
+
+Expected output
+[Jenkins](jenkins-1.png)
