@@ -83,3 +83,15 @@ Expected output
 ![Install nginx playbook](ansible-nginx-playbook-1.png)
 ![Install nginx playbook](ansible-nginx-playbook-2.png)
 ![Install nginx playbook](ansible-nginx-playbook-3.png)
+
+# Day 4 Agenda
+
+## Agile vs Waterfall
+
+## What is DevOps?
+
+## What is Continuous Integration (CI) ?
+
+## What is Continuous Deployment (CD) ?
+
+## What is Continuous Delivery (CD) ?
