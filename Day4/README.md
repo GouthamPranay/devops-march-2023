@@ -132,3 +132,12 @@ Expected output
 ![Jenkins](jenkins-3.png)
 ![Jenkins](jenkins-4.png)
 ![Jenkins](jenkins-5.png)
+
+
+We need to install the below plugins ( Manage Jenkins --> Manage Plugins --> Available Plugins )
+1. Maven Integration
+2. Docker
+3. Blue Ocean Pipeline Editor
+4. Ansible 
+5. Ansible Tower
+6. Build Pipeline
