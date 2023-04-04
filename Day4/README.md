@@ -45,3 +45,20 @@ To apply the bashrc file changes, we need to source the bashrc as shown below
 source ~/.bashrc
 mvn --version
 ```
+
+## Install Docker Community Edition in CentOS
+```
+sudo yum install -y yum-utils
+
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+sudo systemctl enable docker
+sudo systemctl start docker
+sudo systemctl status docker
+sudo usermod -aG $USER docker
+sudo su $USER
+docker --version
+docker images
+```
