@@ -32,3 +32,16 @@ tar xvf openjdk-18_linux-x64_bin.tar.gz
 
 sudo mv jdk-18 /opt/
 ```
+
+Edit your ~/.bashrc file and append the below lines at the end of the file
+```
+export JAVA_HOME=/opt/jdk-18
+export M2_HOME=~/Downloads/apache-maven-3.9.1
+export PATH=$JAVA_HOME/bin:$M2_HOME/bin:$PATH
+```
+
+To apply the bashrc file changes, we need to source the bashrc as shown below
+```
+source ~/.bashrc
+mvn --version
+```
