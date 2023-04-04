@@ -120,7 +120,7 @@ Launching jenkins
 ```
 cd ~/Downloads
 
-java -jar ./jenkins.war --enable-future-java
+java -jar ./jenkins.war
 ```
 
 Expected output
