@@ -80,5 +80,5 @@ ansible-playbook -i inventory install-nginx-playbook.yml
 ```
 
 Expected output
-![Install nginx playbook](ansible-nginx-playbook-1.png
-)
+![Install nginx playbook](ansible-nginx-playbook-1.png)
+![Install nginx playbook](ansible-nginx-playbook-2.png)
