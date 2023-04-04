@@ -1,0 +1,5 @@
+- name: This playbook will install, configure web root folder and deploys a custom web page into the ansible nodes
+  hosts: all
+  tasks:
+  - name: Install nginx web server into ansible nodes
+    apt: name=nginx state=latest update_cache=yes
