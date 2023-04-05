@@ -1,1 +1,12 @@
-# Day5
+# Day 5
+
+## Lab - Creating a Freestyle Jenkins Job
+
+![Freestyle Jenkins Job](freestyle-1.png)
+![Freestyle Jenkins Job](freestyle-2.png)
+![Freestyle Jenkins Job](freestyle-3.png)
+![Freestyle Jenkins Job](freestyle-4.png)
+![Freestyle Jenkins Job](freestyle-5.png)
+![Freestyle Jenkins Job](freestyle-6.png)
+![Freestyle Jenkins Job](freestyle-7.png)
+![Freestyle Jenkins Job](freestyle-8.png)
