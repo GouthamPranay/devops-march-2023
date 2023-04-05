@@ -9,7 +9,7 @@ pipeline {
                 script {
                     dir("Day5/multi-module-project") {
                         sh "mvn clean compile"
-                    )
+                    }
                 }
             }
         }
@@ -18,7 +18,7 @@ pipeline {
                 script {
                     dir("Day5/multi-module-project") {
                         sh "mvn test"
-                    )
+                    }
                 }
             }
         }
@@ -27,7 +27,7 @@ pipeline {
                 script {
                     dir("Day5/multi-module-project") {
                         sh "mvn package"
-                    )
+                    }
                 }
             }
         }
@@ -36,7 +36,7 @@ pipeline {
                 script {
                     dir("Day5/multi-module-project") {
                         sh "mvn install"
-                    )
+                    }
                 }
             }
         }
