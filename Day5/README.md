@@ -113,5 +113,9 @@ Click on Save and Test button and you should see "Data source is working" with a
 ![Grafana](grafana-datasource-3.png)
 
 We need to browse and import Prometheus dashboard within Grafan portal
-![Grafana](grafana-datasource-4.png)
-![Grafana](grafana-datasource-5.png)
+![Grafana](grafana-dashboard-1.png)
+![Grafana](grafana-dashboard-2.png)
+![Grafana](grafana-dashboard-3.png)
+![Grafana](grafana-dashboard-4.png)
+![Grafana](grafana-dashboard-5.png)
+
