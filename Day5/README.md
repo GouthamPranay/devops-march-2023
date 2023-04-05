@@ -109,3 +109,6 @@ We need to create a prometheus datasource within Grafana.
 Click on create your first datasource and select Prometheus
 ![Grafana](grafana-datasource-1.png)
 ![Grafana](grafana-datasource-2.png)
+Click on Save and Test button and you should see "Data source is working" with a green coloured tick mark.
+![Grafana](grafana-datasource-3.png)
+
