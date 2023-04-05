@@ -119,5 +119,6 @@ We need to browse and import Prometheus dashboard within Grafan portal
 ![Grafana](grafana-dashboard-4.png)
 ![Grafana](grafana-dashboard-5.png)
 
-### Importing Jenkins Job stats Dashboard
+### Importing Jenkins Job stats Dashboard (Import Dashboard ID - 9964)
 ![Grafana](grafana-jenkins-dashboard-1.png)
+![Grafana](grafana-jenkins-dashboard-2.png)
