@@ -63,20 +63,22 @@ Accessing Grafana Dashboard
 <pre>
 http://localhost:3000
 </pre>
-![Grafana](grafana-2.png)
-
 Login to Grafana Dashboard with default credentials
 <pre>
 username - admin
 password - admin
 </pre>
-![Grafana](grafana-3.png)
+![Grafana](grafana-2.png)
+
 
 Change the Grafana Dashboard password
 <pre>
 username - admin
 password - Admin@123
 </pre>
+
+![Grafana](grafana-3.png)
+
 
 Grafana Dashboard looks like this
 ![Grafana](grafana-4.png)
