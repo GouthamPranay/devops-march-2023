@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     dir("Day5/multi-module-project") {
-                        sh "mvn test"
+                        sh "mvn test -P test"
                     }
                 }
             }
@@ -26,7 +26,7 @@ pipeline {
             steps {
                 script {
                     dir("Day5/multi-module-project") {
-                        sh "mvn package"
+                        sh "mvn package -P package"
                     }
                 }
             }
