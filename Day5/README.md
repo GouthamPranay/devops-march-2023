@@ -122,6 +122,16 @@ We need to browse and import Prometheus dashboard within Grafan portal
 ### Importing Jenkins Job stats Dashboard (Import Dashboard ID - 9964)
 ![Grafana](grafana-jenkins-dashboard-2.png)
 
+## Lab - Creating a DevOps Pipeline declaratively using Jenkinsfile
+![Pipeline](pipeline-1.png)
+![Pipeline](pipeline-2.png)
+![Pipeline](pipeline-3.png)
+![Pipeline](pipeline-4.png)
+![Pipeline](pipeline-5.png)
+![Pipeline](pipeline-6.png)
+![Pipeline](pipeline-7.png)
+![Pipeline](pipeline-8.png)
+
 
 # Post test link for DevOps training.
 <pre>
