@@ -14,3 +14,7 @@
 ## ⛹️‍♂️ Lab - Invoking Ansible Playbook from a Jenkins Freestyle Job
 Create a FreeStyle named "InvokeAnsiblePlaybook" copying the HelloFreeStyleJob. The only change is in the Execute Shell section as shown below
 ![Invoke Ansible Playbook](invoke-ansible-playbook-shell.png)
+
+## ⛹️‍♂️ Lab - Invoking Ansible Playbook from a Jenkins Freestyle Job using Jenkins Ansible Plugin
+Create a FreeStyle named "InvokeAnsiblePlaybookUsingAnsiblePlugin" copying the HelloFreeStyleJob. The only change is in the Execute Shell section as shown below
+![Invoke Ansible Playbook](invoke-ansible-playbook-using-ansible-plugin.png)
