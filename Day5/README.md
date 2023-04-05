@@ -112,3 +112,6 @@ Click on create your first datasource and select Prometheus
 Click on Save and Test button and you should see "Data source is working" with a green coloured tick mark.
 ![Grafana](grafana-datasource-3.png)
 
+We need to browse and import Prometheus dashboard within Grafan portal
+![Grafana](grafana-datasource-4.png)
+![Grafana](grafana-datasource-5.png)
