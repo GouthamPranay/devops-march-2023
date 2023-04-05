@@ -33,10 +33,19 @@ Installing Prometheus Metrics Plugin in Jenkins
 ![Prometheus Metrics](prometheus-4.png)
 
 Accessing Prometheus Metrics from the Prometheus Metrics REST endpoint URL
+<pre>
+http://localhost:8080/prometheus
+</pre>
 ![Prometheus Metrics](prometheus-5.png)
 
 Creating Prometheus container
+<pre>
+docker run --name prometheus --hostname prometheus -p 9090:9090 bitnami/prometheus:latest
+</pre>
 ![Prometheus Metrics](prometheus-1.png)
 
 Accessing Prometheus Dashboard
+<pre>
+http://localhost:9090
+</pre>
 ![Prometheus Metrics](prometheus-2.png)
