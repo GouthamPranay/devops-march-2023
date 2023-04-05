@@ -132,6 +132,21 @@ We need to browse and import Prometheus dashboard within Grafan portal
 ![Pipeline](pipeline-7.png)
 ![Pipeline](pipeline-8.png)
 
+## References
+Maven documentation
+<pre>
+https://maven.apache.org/guides/
+</pre>
+
+Docker documentation
+<pre>
+https://docs.docker.com/get-started/
+</pre>
+
+Ansible documentation
+<pre>
+https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.3
+</pre>
 
 # Post test link for DevOps training.
 <pre>
