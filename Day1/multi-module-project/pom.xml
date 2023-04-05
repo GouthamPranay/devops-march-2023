@@ -24,7 +24,7 @@
 		<module>businesslayer</module>
 		<module>backend</module>
 		<module>main</module>
-		<module>cpp</module>
+		<!--		<module>cpp</module> -->
 	</modules>
 
 	<distributionManagement>
