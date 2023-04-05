@@ -30,9 +30,10 @@ Expected output
 
 Installing Prometheus Metrics Plugin in Jenkins
 ![Prometheus Metrics](prometheus-3.png)
-
-Accessing Prometheus Metrics
 ![Prometheus Metrics](prometheus-4.png)
+
+Accessing Prometheus Metrics from the Prometheus Metrics REST endpoint URL
+![Prometheus Metrics](prometheus-5.png)
 
 Creating Prometheus container
 ![Prometheus Metrics](prometheus-1.png)
