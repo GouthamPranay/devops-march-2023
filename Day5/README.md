@@ -102,3 +102,10 @@ docker ps
 ![Prometheus](prometheus-8.png)
 ![Prometheus](prometheus-9.png)
 ![Prometheus](prometheus-10.png)
+
+### Integrating Prometheus server with Grafana Visualization Server
+We need to create a prometheus datasource within Grafana.
+![Grafana](grafana-2.png)
+Click on create your first datasource and select Prometheus
+![Grafana](grafana-datasource-1.png)
+![Grafana](grafana-datasource-2.png)
