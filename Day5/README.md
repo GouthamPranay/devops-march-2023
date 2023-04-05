@@ -19,8 +19,9 @@ Create a FreeStyle named "InvokeAnsiblePlaybook" copying the HelloFreeStyleJob. 
 Create a FreeStyle named "InvokeAnsiblePlaybookUsingAnsiblePlugin" copying the HelloFreeStyleJob. The only change is in the Execute Shell section as shown below
 ![Invoke Ansible Playbook](invoke-ansible-playbook-using-ansible-plugin.png)
 
-## ⛹️‍♂️ Lab - Jenkins Performance Monitoring using Prometheus and plotting performance metrics using Grafana Visualization Dashboard
+# ⛹️‍♂️ Lab - Jenkins Performance Monitoring using Prometheus and plotting performance metrics using Grafana Visualization Dashboard
 
+## Setup Prometheus
 In you Jenkins, you need to install Prometheus Metrics Plugin.  After installing, you can verify prometheus REST endpoint URL from your web browser
 ```
 http://localhost:8080/prometheus
@@ -49,3 +50,33 @@ Accessing Prometheus Dashboard
 http://localhost:9090
 </pre>
 ![Prometheus Metrics](prometheus-2.png)
+
+## Setup Grafana
+
+Create Grafana container
+<pre>
+docker run -d --name=grafana -p 3000:3000 grafana/grafana
+</pre>
+![Grafana](grafana-1.png)
+
+Accessing Grafana Dashboard
+<pre>
+http://localhost:3000
+</pre>
+![Grafana](grafana-2.png)
+
+Login to Grafana Dashboard with default credentials
+<pre>
+username - admin
+password - admin
+</pre>
+![Grafana](grafana-3.png)
+
+Change the Grafana Dashboard password
+<pre>
+username - admin
+password - Admin@123
+</pre>
+
+Grafana Dashboard looks like this
+![Grafana](grafana-4.png)
