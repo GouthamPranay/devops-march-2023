@@ -82,3 +82,23 @@ password - Admin@123
 
 Grafana Dashboard looks like this
 ![Grafana](grafana-4.png)
+
+
+### Integrating Jenkins Prometheus Metrics with Prometheus Server
+We need to configure the prometheus.yml in the prometheus container.  You need to replace '192.168.1.80' with your RPS centos IP Address before copying it to the prometheus container.
+```
+cd ~/devops-march-2023
+git pull
+
+cd Day5/prometheus-grafana
+docker ps
+cat prometheus.yml
+docker cp prometheus.yml prometheus:/etc/prometheus/prometheus.yml
+docker restart prometheus
+docker ps
+```
+![Prometheus](prometheus-6.png)
+![Prometheus](prometheus-7.png)
+![Prometheus](prometheus-8.png)
+![Prometheus](prometheus-9.png)
+![Prometheus](prometheus-10.png)
